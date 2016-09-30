@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
+            <connections>
+                <outlet property="txtUserID" destination="s8X-ih-nTH" id="wYz-Uj-E12"/>
+                <outlet property="vW" destination="hog-g9-MP2" id="t2F-Ph-Vpi"/>
+                <outlet property="view" destination="iN0-l3-epB" id="qZp-Or-fYf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqe-FV-iGm">
+                    <rect key="frame" x="279" y="220" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter UserID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s8X-ih-nTH">
+                    <rect key="frame" x="154" y="280" width="291" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCY-wv-h5V">
+                    <rect key="frame" x="193" y="352" width="214" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="btnGetData:" destination="-1" eventType="touchUpInside" id="UL2-hJ-gpN"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hog-g9-MP2">
+                    <rect key="frame" x="34" y="406" width="151" height="158"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eCY-wv-h5V" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6h0-pI-T83"/>
+                <constraint firstItem="s8X-ih-nTH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9Ou-Eb-Q19"/>
+                <constraint firstItem="Pqe-FV-iGm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I26-xE-qlf"/>
+                <constraint firstItem="Pqe-FV-iGm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="J0p-LD-IBk"/>
+                <constraint firstItem="eCY-wv-h5V" firstAttribute="top" secondItem="s8X-ih-nTH" secondAttribute="bottom" constant="42" id="Mu8-Le-Qbr"/>
+                <constraint firstItem="s8X-ih-nTH" firstAttribute="top" secondItem="Pqe-FV-iGm" secondAttribute="bottom" constant="39" id="h3Y-nV-1Cd"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

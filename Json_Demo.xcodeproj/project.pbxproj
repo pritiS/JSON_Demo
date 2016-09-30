@@ -10,9 +10,11 @@
 		041058251CF56EF9007BD5A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 041058241CF56EF9007BD5A3 /* main.m */; };
 		041058281CF56EF9007BD5A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 041058271CF56EF9007BD5A3 /* AppDelegate.m */; };
 		0410582B1CF56EF9007BD5A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410582A1CF56EF9007BD5A3 /* ViewController.m */; };
-		0410582E1CF56EF9007BD5A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0410582C1CF56EF9007BD5A3 /* Main.storyboard */; };
 		041058301CF56EF9007BD5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0410582F1CF56EF9007BD5A3 /* Assets.xcassets */; };
 		041058331CF56EF9007BD5A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041058311CF56EF9007BD5A3 /* LaunchScreen.storyboard */; };
+		0410583B1CF56F93007BD5A3 /* ViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0410583A1CF56F93007BD5A3 /* ViewController~ipad.xib */; };
+		0456F17B1D23D2A1004E69FF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0456F17A1D23D2A1004E69FF /* AddressBook.framework */; };
+		0456F17D1D23D2A6004E69FF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0456F17C1D23D2A6004E69FF /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +24,12 @@
 		041058271CF56EF9007BD5A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		041058291CF56EF9007BD5A3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0410582A1CF56EF9007BD5A3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0410582D1CF56EF9007BD5A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0410582F1CF56EF9007BD5A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041058321CF56EF9007BD5A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041058341CF56EF9007BD5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0410583A1CF56F93007BD5A3 /* ViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ViewController~ipad.xib"; sourceTree = "<group>"; };
+		0456F17A1D23D2A1004E69FF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		0456F17C1D23D2A6004E69FF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0456F17D1D23D2A6004E69FF /* AddressBookUI.framework in Frameworks */,
+				0456F17B1D23D2A1004E69FF /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,8 @@
 		041058171CF56EF9007BD5A3 = {
 			isa = PBXGroup;
 			children = (
+				0456F17C1D23D2A6004E69FF /* AddressBookUI.framework */,
+				0456F17A1D23D2A1004E69FF /* AddressBook.framework */,
 				041058221CF56EF9007BD5A3 /* Json_Demo */,
 				041058211CF56EF9007BD5A3 /* Products */,
 			);
@@ -62,7 +70,7 @@
 				041058271CF56EF9007BD5A3 /* AppDelegate.m */,
 				041058291CF56EF9007BD5A3 /* ViewController.h */,
 				0410582A1CF56EF9007BD5A3 /* ViewController.m */,
-				0410582C1CF56EF9007BD5A3 /* Main.storyboard */,
+				0410583A1CF56F93007BD5A3 /* ViewController~ipad.xib */,
 				0410582F1CF56EF9007BD5A3 /* Assets.xcassets */,
 				041058311CF56EF9007BD5A3 /* LaunchScreen.storyboard */,
 				041058341CF56EF9007BD5A3 /* Info.plist */,
@@ -136,9 +144,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0410583B1CF56F93007BD5A3 /* ViewController~ipad.xib in Resources */,
 				041058331CF56EF9007BD5A3 /* LaunchScreen.storyboard in Resources */,
 				041058301CF56EF9007BD5A3 /* Assets.xcassets in Resources */,
-				0410582E1CF56EF9007BD5A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,14 +166,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0410582C1CF56EF9007BD5A3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0410582D1CF56EF9007BD5A3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		041058311CF56EF9007BD5A3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -302,6 +302,7 @@
 				041058391CF56EF9007BD5A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
