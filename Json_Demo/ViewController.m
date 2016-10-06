@@ -12,8 +12,11 @@
 #import <AddressBook/AddressBook.h>
 
 
+
+
 @interface ViewController (){
 
+    UILabel *lblterms;
     NSMutableArray *greeting;
 }
 
@@ -23,11 +26,120 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self callJSonlist];
-    [self getPlaces];
+
+    [self attributedLabel];
+    
+    //[self callJSonlist];
+    //[self getPlaces];
+
     
     [self getContactList];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)attributedLabel{
+    
+    NSString* localizedString =   @"By signing up you agree to our #<tc>Terms & Conditions# and #<pp>Privacy Policy#";
+        // 1. Split the localized string on the # sign:
+        NSArray *localizedStringPieces = [localizedString componentsSeparatedByString:@"#"];
+        
+        // 2. Loop through all the pieces:
+        NSUInteger msgChunkCount = localizedStringPieces ? localizedStringPieces.count : 0;
+        CGPoint wordLocation = CGPointMake(0.0, 0.0);
+        for (NSUInteger i = 0; i < msgChunkCount; i++)
+        {
+            NSString *chunk = [localizedStringPieces objectAtIndex:i];
+            if ([chunk isEqualToString:@""])
+            {
+                continue;     // skip this loop if the chunk is empty
+            }
+            
+            // 3. Determine what type of word this is:
+            BOOL isTermsOfServiceLink = [chunk hasPrefix:@"<tc>"];
+            BOOL isPrivacyPolicyLink  = [chunk hasPrefix:@"<pp>"];
+            BOOL isLink = (BOOL)(isTermsOfServiceLink || isPrivacyPolicyLink);
+            
+            // 4. Create label, styling dependent on whether it's a link:
+            lblterms = [[UILabel alloc] init];
+            lblterms.font = [UIFont systemFontOfSize:15.0f];
+            lblterms.text = chunk;
+            lblterms.userInteractionEnabled = isLink;
+            
+            if (isLink)
+            {
+                lblterms.textColor = [UIColor colorWithRed:110/255.0f green:181/255.0f blue:229/255.0f alpha:1.0];
+                lblterms.highlightedTextColor = [UIColor yellowColor];
+                
+                // 5. Set tap gesture for this clickable text:
+                SEL selectorAction = isTermsOfServiceLink ? @selector(tapOnTermsOfServiceLink:) : @selector(tapOnPrivacyPolicyLink:);
+                UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                             action:selectorAction];
+                [lblterms addGestureRecognizer:tapGesture];
+                
+                // Trim the markup characters from the label:
+                if (isTermsOfServiceLink)
+                    lblterms.text = [lblterms.text stringByReplacingOccurrencesOfString:@"<tc>" withString:@""];
+                if (isPrivacyPolicyLink)
+                    lblterms.text = [lblterms.text stringByReplacingOccurrencesOfString:@"<pp>" withString:@""];
+            }
+            else
+            {
+                lblterms.textColor = [UIColor blackColor];
+            }
+            
+            // 6. Lay out the labels so it forms a complete sentence again:
+            
+            // If this word doesn't fit at end of this line, then move it to the next
+            // line and make sure any leading spaces are stripped off so it aligns nicely:
+            
+            [lblterms sizeToFit];
+            
+            if (vWAgree.frame.size.width < wordLocation.x + lblterms.bounds.size.width)
+            {
+                wordLocation.x = 0.0;                       // move this word all the way to the left...
+                wordLocation.y += lblterms.frame.size.height;  // ...on the next line
+                
+                // And trim of any leading white space:
+                NSRange startingWhiteSpaceRange = [lblterms.text rangeOfString:@"^\\s*"
+                                                                    options:NSRegularExpressionSearch];
+                if (startingWhiteSpaceRange.location == 0)
+                {
+                    lblterms.text = [lblterms.text stringByReplacingCharactersInRange:startingWhiteSpaceRange
+                                                                     withString:@""];
+                    [lblterms sizeToFit];
+                }
+            }
+            
+            // Set the location for this label:
+            lblterms.frame = CGRectMake(wordLocation.x,
+                                     wordLocation.y,
+                                     lblterms.frame.size.width,
+                                     lblterms.frame.size.height);
+            // Show this label:
+            [vWAgree addSubview:lblterms];
+            
+            // Update the horizontal position for the next word:
+            wordLocation.x += lblterms.frame.size.width;
+        }
+   
+
+}
+
+- (void)tapOnTermsOfServiceLink:(UITapGestureRecognizer *)tapGesture
+{
+    if (tapGesture.state == UIGestureRecognizerStateEnded)
+    {
+        NSLog(@"User tapped on the Terms of Service link");
+    }
+}
+
+
+- (void)tapOnPrivacyPolicyLink:(UITapGestureRecognizer *)tapGesture
+{
+    if (tapGesture.state == UIGestureRecognizerStateEnded)
+    {
+        NSLog(@"User tapped on the Privacy Policy link");
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="txtUserID" destination="s8X-ih-nTH" id="wYz-Uj-E12"/>
                 <outlet property="vW" destination="hog-g9-MP2" id="t2F-Ph-Vpi"/>
+                <outlet property="vWAgree" destination="yis-IO-XR0" id="Dud-Lv-AE6"/>
                 <outlet property="view" destination="iN0-l3-epB" id="qZp-Or-fYf"/>
             </connections>
         </placeholder>
@@ -39,8 +40,12 @@
                     <rect key="frame" x="34" y="406" width="151" height="158"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yis-IO-XR0">
+                    <rect key="frame" x="100" y="94" width="483" height="58"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.41883081900000002" green="0.67443814800000002" blue="0.86664193469999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="eCY-wv-h5V" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6h0-pI-T83"/>
                 <constraint firstItem="s8X-ih-nTH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9Ou-Eb-Q19"/>
@@ -49,6 +54,7 @@
                 <constraint firstItem="eCY-wv-h5V" firstAttribute="top" secondItem="s8X-ih-nTH" secondAttribute="bottom" constant="42" id="Mu8-Le-Qbr"/>
                 <constraint firstItem="s8X-ih-nTH" firstAttribute="top" secondItem="Pqe-FV-iGm" secondAttribute="bottom" constant="39" id="h3Y-nV-1Cd"/>
             </constraints>
+            <point key="canvasLocation" x="240" y="290"/>
         </view>
     </objects>
 </document>
